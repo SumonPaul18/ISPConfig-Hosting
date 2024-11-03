@@ -22,74 +22,84 @@
 
     systemctl reboot
 
-#Install screen for terminal multiplexer
+#### Install screen for terminal multiplexer
+```
 apt install screen
 screen --version
 screen -S ispconfig
 screen -ls
-screen -r 
+```
+#### Restore the terminal screen
+    screen -r 
 or
-screen -r 10835 or session name
-exit
+    screen -r 10835 or session name
+#### Exit from terminal screen
+    exit
 
-#Run the ISPConfig autoinstaller
+#### Run the ISPConfig autoinstaller
 
-wget -O - https://get.ispconfig.org | sh -s -- --help
+    wget -O - https://get.ispconfig.org | sh -s -- --help
 
-#When get error for php-mbstring
-sudo apt install php-mbstring
+#### When get error for php-mbstring
+    sudo apt install php-mbstring
+    wget -O - https://get.ispconfig.org | sh -s -- --use-ftp-ports=40110-40210 --unattended-upgrades
 
-wget -O - https://get.ispconfig.org | sh -s -- --use-ftp-ports=40110-40210 --unattended-upgrades
 
+#### Type 'yes' if you really want to continue: yes
 
-#Type 'yes' if you really want to continue: yes
+#### Take some times:
 
-#Take some times:
-
-#When the installer is finished it will show you the ISPConfig admin and MySQL root password. The this genarated automatically. 
+#### When the installer is finished it will show you the ISPConfig admin and MySQL root password. The this genarated automatically. 
 
 #[INFO] Your ISPConfig admin password is: ubuntu
+
 #[INFO] Your MySQL root password is: ubuntu
 
 #ISPConfig 3 Installation Is Done.
 
 
-ISPConfig Login:-
+#### ISPConfig Login:-
 
 https://server_IP_address:8080/
+
 User = admin
+
 pass = ubuntu
 
-#After first login to Setting up the firewall
+#### After first login to Setting up the firewall
 
-#Log in to the ISPConfig UI, and go to System -> Firewall. Then click "Add new firewall record".
+#### Log in to the ISPConfig UI, and go to System -> Firewall. Then click "Add new firewall record".
 
 TCP:
+
 20,21,22,25,80,443,40110:40210,110,143,465,587,993,995,53,8080,8081
 
 UDP:
+
 53
 
-++++++++++++++ Troubleshooting +++++++++++++++
-#How to reset the administrator password in ISPConfig
-++++++++++++++++++++++++++++++++++++++++++++++
-#Login to the mysql database.
+#
+#### Troubleshooting
+#### How to reset the administrator password in ISPConfig
 
-mysql -u root -p
+#### Login to the mysql database.
 
-# Then enter the password of the mysql root user. To switch to the ISPConfig database, run this command:
+    mysql -u root -p
 
-use dbispconfig;
+#### Then enter the password of the mysql root user. To switch to the ISPConfig database, run this command:
 
-# And execute the SQL command:
+    use dbispconfig;
 
-UPDATE sys_user SET passwort = md5('admin') WHERE username = 'admin';
+#### And execute the SQL command:
 
-# Finally close the mysql shell:
+    UPDATE sys_user SET passwort = md5('admin') WHERE username = 'admin';
 
-quit;
+#### Finally close the mysql shell:
 
-++++++++++++++ Troubleshooting +++++++++++++++
+    quit;
+
+#
+End Troubleshooting
 #
 #### Reference: 
 1. https://vkttech.com/how-to-install-ispconfig-3-on-debian-10-11-and-ubuntu-20-04/ (Following)
