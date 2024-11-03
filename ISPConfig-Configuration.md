@@ -1,6 +1,17 @@
 #### How to Install & Configuration ISPConfig 3 on Ubuntu
 
+In this article,I will show you how to install ISPConfig 3 on Ubuntu as well as go through the initial configuration.
 
+ISPConfig is a fast reliable control panel for managing a Linux Virtual Private Server (VPS). It is an open-source program allow you to manage services through a web browser. ISPConfig allows hosting multiple domains in a single server with the Apache and Nginx web server. You can manage websites, email addresses, FTP accounts, DNS records, databases and much more featured.
+
+
+#### Requirement:
+
+1. Ubuntu And Debian Vps
+2. Memory – 2GB, recommended 4 GB.
+3. CPU – 2-core CPU or 2 vCPUs.
+4. Storage space – 10 GB of free hard disk space.
+5. DNS Records – FQDN with MX and A DNS-records
 
 #### Chnage hostname:
     nano /etc/hostname
