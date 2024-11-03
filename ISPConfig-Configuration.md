@@ -1,31 +1,26 @@
-How to Install & Configuration ISPConfig 3 on Ubuntu
-
-Ref: 
-1. https://vkttech.com/how-to-install-ispconfig-3-on-debian-10-11-and-ubuntu-20-04/ (Following)
-2. https://www.howtoforge.com/ispconfig-autoinstall-debian-ubuntu/ (official)
-3. https://computingforgeeks.com/install-configure-ispconfig-control-panel-on-ubuntu/ (following)
-4. https://www.youtube.com/watch?v=euFFSuX9-VY&list=PLT59sMA4iPM9Kdc_lwvY633L-CPTE8zsA (following)
-5. 
-
-#Chnage hostname:
-nano /etc/hostname
-
-#Configure the hostname and hosts
-nano /etc/hosts
+#### How to Install & Configuration ISPConfig 3 on Ubuntu
 
 
-#Need Reboot
-systemctl reboot
 
-#Check hostname with fqdn
-hostname -f
+#### Chnage hostname:
+    nano /etc/hostname
 
-#Update your system packages before installations
-apt update && apt upgrade
+#### Configure the hostname and hosts
+    nano /etc/hosts
 
-#Reboot Again
 
-systemctl reboot
+#### Need Reboot
+    systemctl reboot
+
+#### Check hostname with fqdn
+    hostname -f
+
+#### Update your system packages before installations
+    apt update && apt upgrade
+
+#### Reboot Again
+
+    systemctl reboot
 
 #Install screen for terminal multiplexer
 apt install screen
@@ -95,3 +90,10 @@ UPDATE sys_user SET passwort = md5('admin') WHERE username = 'admin';
 quit;
 
 ++++++++++++++ Troubleshooting +++++++++++++++
+#
+#### Reference: 
+1. https://vkttech.com/how-to-install-ispconfig-3-on-debian-10-11-and-ubuntu-20-04/ (Following)
+2. https://www.howtoforge.com/ispconfig-autoinstall-debian-ubuntu/ (official)
+3. https://computingforgeeks.com/install-configure-ispconfig-control-panel-on-ubuntu/ (following)
+4. https://www.youtube.com/watch?v=euFFSuX9-VY&list=PLT59sMA4iPM9Kdc_lwvY633L-CPTE8zsA (following)
+#
